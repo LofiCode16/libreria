@@ -10,6 +10,16 @@
   </head>
 
   <body>
+
+    <% if user_signed_in? %>
+        <%= link_to  "Cerrar sesión", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+        <%= link_to  "Inicio", root_path %>
+        <%= link_to  "Mi perfil", user_profile_path %>
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <%= yield %>
   </body>
 </html>
